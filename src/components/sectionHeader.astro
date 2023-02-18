@@ -1,0 +1,13 @@
+---
+export interface SectionHeaderProps {
+  headerText: string;
+  paragraph: string;
+}
+
+const { headerText, paragraph } = Astro.props as SectionHeaderProps;
+---
+
+<div class="">
+  <h2 class="text-3xl uppercase mb-5 font-bold">{headerText}</h2>
+  <p class="text-gray-500">{paragraph}</p>
+</div>

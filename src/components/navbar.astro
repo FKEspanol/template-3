@@ -1,0 +1,61 @@
+---
+const flexBetweenCenter = "flex justify-between align-middle";
+---
+
+<header class="bg-zinc-800 py-5">
+  <div class="container mx-auto">
+    <div
+      class={`${flexBetweenCenter}`}
+      style="height: fit-content; margin: auto 0"
+    >
+      <div class="logo-brand">
+        <a href="/">
+          <h1
+            class="text-white text-3xl uppercase font-semibold tracking-widest"
+          >
+            Astro
+          </h1>
+        </a>
+      </div>
+      <ul class={`nav-links ${flexBetweenCenter} gap-10`}>
+        <li class={`${flexBetweenCenter} gap-3`}>
+          <i class="fa fa-home text-white text-lg"></i>
+          <a href="/" class="text-white uppercase text-sm">HOME</a>
+        </li>
+        <li class={`${flexBetweenCenter} gap-3`}>
+          <i class="fa fa-info-circle text-white text-lg"></i>
+          <a href="/" class="text-white uppercase text-sm">About</a>
+        </li>
+        <li class={`${flexBetweenCenter} gap-3`}>
+          <i class="fa fa-truck text-white text-lg"></i>
+          <a href="/" class="text-white uppercase text-sm">Services</a>
+        </li>
+        <li class={`${flexBetweenCenter} gap-3`}>
+          <i class="fa fa-project-diagram text-white text-lg"></i>
+          <a href="/" class="text-white uppercase text-sm">Portfolio</a>
+        </li>
+        <li class={`${flexBetweenCenter} gap-3`}>
+          <i class="fa fa-users text-white text-lg"></i>
+          <a href="/" class="text-white uppercase text-sm">Team</a>
+        </li>
+        <li class={`${flexBetweenCenter} gap-3`}>
+          <i class="fa fa-phone text-white text-lg"></i>
+          <a href="/" class="text-white uppercase text-sm">Contact</a>
+        </li>
+      </ul>
+      <button
+        class="px-8 py-2 border border-white border-r-2 text-white rounded-md"
+        >GET STARTED</button
+      >
+    </div>
+  </div>
+</header>
+
+<style>
+  .logo-brand,
+  .nav-links,
+  a {
+    height: fit-content;
+    margin: auto 0;
+  }
+</style>
