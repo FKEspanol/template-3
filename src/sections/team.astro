@@ -44,21 +44,33 @@ const team: Team[] = [
       headerText="Our Team"
       paragraph="Green Clean is a professional cleaning company that offers eco-friendly cleaning"
     />
-    <div class="grid grid-cols-3 gap-5">
+    <div class="grid grid-cols-3">
       {
         team.map(({ imageSource, memberName, memberPosition, quote }) => {
           return (
-            <div class="py-5 px-10 text-center">
+            <div class="p-7 text-center shadow-xl w-11/12 mx-auto">
               <img
                 src={imageSource}
                 alt={`image of ${memberPosition} ${memberName}`}
-                class="mb-8"
+                class="rounded-full mb-8 w-3/5 m-auto"
               />
-              <h4 class="text-xl font-semibold">{memberName}</h4>
+              <h4 class="text-lg font-semibold">{memberName}</h4>
               <small class="italic">{memberPosition}</small>
-              <p class=" italic text-gray-600 mt-5">{quote}</p>
-              <div class="flex justify-center align-middle">
-                <i />
+              <p class=" italic text-gray-600 my-5">{quote}</p>
+              <div class="flex justify-center align-middle gap-x-3">
+                <a target="_blank" href="https://www.facebook.com">
+                  <div class="fab fa-facebook text-xl" />
+                </a>
+                <a target="_blank" href="https://www.twitter.com">
+                  <div class="fab fa-twitter text-xl" />
+                </a>
+
+                <a target="_blank" href="https://www.instagram.com">
+                  <div class="fab fa-instagram text-xl" />
+                </a>
+                <a target="_blank" href="https://www.linkedin.com">
+                  <div class="fab fa-linkedin text-xl" />
+                </a>
               </div>
             </div>
           );
