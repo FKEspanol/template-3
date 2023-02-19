@@ -1,13 +1,69 @@
 ---
 import Section from "../components/section.astro";
 import SectionHeader from "../components/sectionHeader.astro";
+
+import team1 from "../assets/images/team-1.jpg";
+import team2 from "../assets/images/team-2.jpg";
+import team3 from "../assets/images/team-3.jpg";
+
+interface Team {
+  imageSource: string;
+  memberName: string;
+  memberPosition: string;
+  quote: string;
+}
+
+const team: Team[] = [
+  {
+    imageSource: team1,
+    memberName: "John Doe",
+    memberPosition: "Chief Executive Officer",
+    quote:
+      "Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut",
+  },
+  {
+    imageSource: team2,
+    memberName: "Kelsey Smith",
+    memberPosition: "Product Manager",
+    quote:
+      "Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus",
+  },
+  {
+    imageSource: team3,
+    memberName: "Derek Jones",
+    memberPosition: "CTO",
+    quote:
+      "Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara",
+  },
+];
 ---
 
 <Section id="team">
   <div class="container mx-auto">
     <SectionHeader
-      headerText="Out Team"
+      headerText="Our Team"
       paragraph="Green Clean is a professional cleaning company that offers eco-friendly cleaning"
     />
+    <div class="grid grid-cols-3 gap-5">
+      {
+        team.map(({ imageSource, memberName, memberPosition, quote }) => {
+          return (
+            <div class="py-5 px-10 text-center">
+              <img
+                src={imageSource}
+                alt={`image of ${memberPosition} ${memberName}`}
+                class="mb-8"
+              />
+              <h4 class="text-xl font-semibold">{memberName}</h4>
+              <small class="italic">{memberPosition}</small>
+              <p class=" italic text-gray-600 mt-5">{quote}</p>
+              <div class="flex justify-center align-middle">
+                <i />
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
   </div>
 </Section>
