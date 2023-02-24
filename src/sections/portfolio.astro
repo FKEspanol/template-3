@@ -1,6 +1,21 @@
 ---
 import Section from "../components/section.astro";
 import SectionHeader from "../components/sectionHeader.astro";
+import Button from "../components/button.astro";
+
+import img1 from "../assets/images/portfolio-1.jpg";
+import img2 from "../assets/images/portfolio-2.jpg";
+import img3 from "../assets/images/portfolio-3.jpg";
+import img4 from "../assets/images/portfolio-4.jpg";
+import img5 from "../assets/images/portfolio-5.jpg";
+import img6 from "../assets/images/portfolio-6.jpg";
+import img7 from "../assets/images/portfolio-7.jpg";
+import img8 from "../assets/images/portfolio-8.jpg";
+import img9 from "../assets/images/portfolio-9.jpg";
+
+const row1 = [img1, img2, img3];
+const row2 = [img4, img5, img6];
+const row3 = [img7, img8, img9];
 ---
 
 <Section id="portfolio">
@@ -9,5 +24,25 @@ import SectionHeader from "../components/sectionHeader.astro";
       headerText="Portfolio"
       paragraph="Green Clean is a professional cleaning company that offers eco-friendly cleaning solutions."
     />
+    <div class="flex justify-center gap-x-4 mb-10">
+      {
+        ["all", "app", "card", "web"].map((i) => {
+          return <Button>{i}</Button>;
+        })
+      }
+    </div>
+    <div class="grid grid-cols-3 grid-img gap-x-8">
+      {
+        [row1, row2, row3].map((row) => {
+          return (
+            <div class="flex flex-col gap-y-8">
+              {row.map((img) => (
+                <img src={img} alt="img" />
+              ))}
+            </div>
+          );
+        })
+      }
+    </div>
   </div>
 </Section>

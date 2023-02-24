@@ -2,10 +2,10 @@
 import Button from "./button.astro";
 const flexBetweenCenter = "flex justify-between align-middle";
 
-const navLinksStyle = "text-gray-800 uppercase text-sm";
+const navLinksStyle = "text-gray-800 uppercase text-sm nav-link";
 ---
 
-<header class="bg-white py-7 fixed w-full z-10 shadow-md">
+<header id="navbar" class="bg-white py-7 fixed w-full z-10 shadow-md">
   <div class="container mx-auto">
     <div
       class={`${flexBetweenCenter}`}
@@ -23,7 +23,7 @@ const navLinksStyle = "text-gray-800 uppercase text-sm";
       <ul class={`nav-links ${flexBetweenCenter} gap-10`}>
         <li class={`${flexBetweenCenter} gap-2`}>
           <i class="fa fa-home text-white text-lg"></i>
-          <a href="#" class={navLinksStyle}>HOME</a>
+          <a href="#home" class={navLinksStyle}>HOME</a>
         </li>
         <li class={`${flexBetweenCenter} gap-2`}>
           <i class="fa fa-info-circle text-white text-lg"></i>
@@ -59,3 +59,20 @@ const navLinksStyle = "text-gray-800 uppercase text-sm";
     margin: auto 0;
   }
 </style>
+
+<script type="module">
+  const navLinks = document.querySelectorAll(".nav-link");
+  const navbar = document.getElementById("navbar");
+
+  navLinks.forEach((link) => {
+    const sectionID = link.getAttribute("href").replace("#", "");
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("fired");
+      window.scrollTo({
+        top: document.getElementById(sectionID).offsetTop - navbar.offsetHeight,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
