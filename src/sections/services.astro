@@ -49,17 +49,17 @@ const cardContent: CardContent[] = [
 ---
 
 <Section id="services">
-  <div class="container mx-auto">
+  <div class="container mx-auto px-3">
     <SectionHeader
       headerText="Services"
       paragraph="Green Clean is a professional cleaning company that offers eco-friendly cleaning"
     />
-    <div class="grid grid-cols-3 gap-10">
+    <div class="lg:grid grid-cols-3 gap-10">
       {
         cardContent.map((content) => {
           return (
-            <div class="block px-12 py-20 rounded-lg hover:shadow-2xl hover:-translate-y-3 duration-500 bg-white">
-              <i class={`${content.fontIcon} text-4xl mb-3`} />
+            <div class="block px-12 py-20 rounded-lg hover:shadow-2xl hover:-translate-y-3 duration-500 bg-white mb-10">
+              <i class={`${content.fontIcon} text-4xl mb-3 primary`} />
               <h5 class="text-gray-900 text-2xl leading-tight font-semibold uppercase mb-2">
                 {content.cardHeader}
               </h5>

@@ -2,11 +2,11 @@
 import Button from "./button.astro";
 const flexBetweenCenter = "flex justify-between align-middle";
 
-const navLinksStyle = "text-gray-800 uppercase text-sm nav-link";
+const navLinksStyle = "text-white uppercase text-sm nav-link";
 ---
 
-<header id="navbar" class="bg-white py-7 fixed w-full z-10 shadow-md">
-  <div class="container mx-auto">
+<header id="navbar" class="bg-primary py-7 fixed w-full z-10 shadow-md">
+  <div class="container mx-auto px-3">
     <div
       class={`${flexBetweenCenter}`}
       style="height: fit-content; margin: auto 0"
@@ -14,13 +14,13 @@ const navLinksStyle = "text-gray-800 uppercase text-sm nav-link";
       <div class="logo-brand">
         <a href="/">
           <h1
-            class="text-gray-800 text-3xl uppercase font-semibold tracking-widest"
+            class="text-white text-3xl uppercase font-semibold tracking-widest"
           >
             Astro
           </h1>
         </a>
       </div>
-      <ul class={`nav-links ${flexBetweenCenter} gap-10`}>
+      <ul class={`nav-links hidden lg:flex ${flexBetweenCenter} gap-10`}>
         <li class={`${flexBetweenCenter} gap-2`}>
           <i class="fa fa-home text-white text-lg"></i>
           <a href="#home" class={navLinksStyle}>HOME</a>

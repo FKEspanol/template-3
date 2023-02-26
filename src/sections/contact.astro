@@ -3,12 +3,41 @@ import Section from "../components/section.astro";
 import SectionHeader from "../components/sectionHeader.astro";
 import Button from "../components/button.astro";
 
+interface ContactInformation {
+  fontIconClass: string;
+  infoName: string;
+  info: string;
+}
+
+const contactInformation: ContactInformation[] = [
+  {
+    fontIconClass: "fa fa-location",
+    infoName: "Location",
+    info: "Bldg 5, Duterte Street, Davao City, Philippines ",
+  },
+  {
+    fontIconClass: "fa fa-envelope",
+    infoName: "Email",
+    info: "info@email.com",
+  },
+  {
+    fontIconClass: "fa fa-phone",
+    infoName: "Call",
+    info: "+63 912 345 6789",
+  },
+  {
+    fontIconClass: "fa fa-clock",
+    infoName: "Open Hours",
+    info: "Monday - Friday, 9:00AM - 05:00PM",
+  },
+];
+
 const inputClassStyles =
   "w-full px-3 py-2.5 text-lg font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none";
 ---
 
 <Section id="contact">
-  <div class="container mx-auto">
+  <div class="container mx-auto px-3">
     <SectionHeader
       headerText="Contact Us"
       paragraph="Green Clean is a professional cleaning company that offers eco-friendly cleaning.."
@@ -40,45 +69,27 @@ const inputClassStyles =
       </style>
     </div>
   </div>
-  <div class="container mx-auto mt-20">
+  <div class="container mx-auto mt-20 px-3">
     <SectionHeader
       headerText="Get In Touch"
       paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. "
     />
 
-    <div class="grid grid-cols-3 mb-5">
+    <div class="lg:grid grid-cols-3 mb-5 gap-x-10">
       <div class="col-start-1 col-end-2">
-        <div class="flex gap-x-5 mb-20">
-          <i class="fa fa-location text-3xl"></i>
-          <div class="block">
-            <h3 class="text-2xl mb-3">Location</h3>
-            <p class="text-sm">
-              Bldg 5, Duterte Street, Davao City, Philippines
-            </p>
-          </div>
-        </div>
-        <div class="flex gap-x-5 mb-20">
-          <i class="fa fa-envelope text-3xl"></i>
-          <div class="block">
-            <h3 class="text-2xl mb-3">Location</h3>
-            <p class="text-sm">info@email.com</p>
-          </div>
-        </div>
-        <div class="flex gap-x-5 mb-20">
-          <i class="fa fa-phone text-3xl"></i>
-          <div class="block">
-            <h3 class="text-2xl mb-3">Call</h3>
-            <p class="text-sm">09123456789</p>
-          </div>
-        </div>
-        <div class="flex gap-x-5 mb-20">
-          <i class="fa fa-clock text-3xl"></i>
-          <div class="block">
-            <h3 class="text-2xl mb-3">Open Hours</h3>
-            <p class="text-sm">Monday - Friday</p>
-            <p class="text-sm">9:00AM - 05:00PM</p>
-          </div>
-        </div>
+        {
+          contactInformation.map((item) => {
+            return (
+              <div class="flex gap-x-5 mb-20">
+                <i class={`${item.fontIconClass} text-3xl primary`} />
+                <div class="block">
+                  <h3 class="text-2xl mb-3">{item.infoName}</h3>
+                  <p class="text-sm">{item.info}</p>
+                </div>
+              </div>
+            );
+          })
+        }
       </div>
       <div class="col-start-2 col-end-4">
         <form class="p-10 w-full bg-white">
@@ -121,7 +132,7 @@ const inputClassStyles =
     </div>
   </div>
   <div class="bg-gray-200 py-20">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-3">
       <SectionHeader
         type="secondary"
         headerText="Our News Letter"

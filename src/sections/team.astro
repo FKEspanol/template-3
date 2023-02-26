@@ -39,16 +39,16 @@ const team: Team[] = [
 ---
 
 <Section id="team">
-  <div class="container mx-auto">
+  <div class="container mx-auto px-3">
     <SectionHeader
       headerText="Our Team"
       paragraph="Green Clean is a professional cleaning company that offers eco-friendly cleaning"
     />
-    <div class="grid grid-cols-3">
+    <div class="lg:grid lg:grid-cols-3">
       {
         team.map(({ imageSource, memberName, memberPosition, quote }) => {
           return (
-            <div class="p-7 text-center shadow-xl w-11/12 mx-auto">
+            <div class="w-full p-7 text-center shadow-xl lg:w-11/12 mx-auto mb-10">
               <img
                 src={imageSource}
                 alt={`image of ${memberPosition} ${memberName}`}
